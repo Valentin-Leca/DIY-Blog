@@ -22,6 +22,12 @@ class ArticleImage
      */
     private $image_name;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Article::class, inversedBy="articleImage", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $article;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +41,18 @@ class ArticleImage
     public function setImageName(string $image_name): self
     {
         $this->image_name = $image_name;
+
+        return $this;
+    }
+
+    public function getArticle(): ?Article
+    {
+        return $this->article;
+    }
+
+    public function setArticle(Article $article): self
+    {
+        $this->article = $article;
 
         return $this;
     }

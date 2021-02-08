@@ -38,11 +38,6 @@ class Comment
     private $comment_report;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $comment_article_id;
-
-    /**
      * @ORM\ManyToOne(targetEntity=Article::class, inversedBy="comments")
      * @ORM\JoinColumn(nullable=false)
      */
@@ -97,18 +92,6 @@ class Comment
     public function setCommentReport(?int $comment_report): self
     {
         $this->comment_report = $comment_report;
-
-        return $this;
-    }
-
-    public function getCommentArticleId(): ?int
-    {
-        return $this->comment_article_id;
-    }
-
-    public function setCommentArticleId(int $comment_article_id): self
-    {
-        $this->comment_article_id = $comment_article_id;
 
         return $this;
     }

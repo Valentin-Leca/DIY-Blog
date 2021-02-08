@@ -22,6 +22,12 @@ class ArticleCategory
      */
     private $article_category;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Article::class, inversedBy="articleCategory", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $article;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +41,18 @@ class ArticleCategory
     public function setArticleCategory(string $article_category): self
     {
         $this->article_category = $article_category;
+
+        return $this;
+    }
+
+    public function getArticle(): ?Article
+    {
+        return $this->article;
+    }
+
+    public function setArticle(Article $article): self
+    {
+        $this->article = $article;
 
         return $this;
     }

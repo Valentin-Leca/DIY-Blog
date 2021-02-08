@@ -42,22 +42,22 @@ class Article
     /**
      * @ORM\Column(type="integer")
      */
-    private $article_category_id;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $article_image_id;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
     private $article_like;
 
     /**
      * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="article", orphanRemoval=true)
      */
     private $comments;
+
+    /**
+     * @ORM\OneToOne(targetEntity=ArticleImage::class, mappedBy="article", cascade={"persist", "remove"})
+     */
+    private $articleImage;
+
+    /**
+     * @ORM\OneToOne(targetEntity=ArticleCategory::class, mappedBy="article", cascade={"persist", "remove"})
+     */
+    private $articleCategory;
 
     public function __construct()
     {
@@ -117,30 +117,6 @@ class Article
         return $this;
     }
 
-    public function getArticleCategoryId(): ?int
-    {
-        return $this->article_category_id;
-    }
-
-    public function setArticleCategoryId(int $article_category_id): self
-    {
-        $this->article_category_id = $article_category_id;
-
-        return $this;
-    }
-
-    public function getArticleImageId(): ?int
-    {
-        return $this->article_image_id;
-    }
-
-    public function setArticleImageId(int $article_image_id): self
-    {
-        $this->article_image_id = $article_image_id;
-
-        return $this;
-    }
-
     public function getArticleLike(): ?int
     {
         return $this->article_like;
@@ -179,6 +155,40 @@ class Article
                 $comment->setArticle(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getArticleImage(): ?ArticleImage
+    {
+        return $this->articleImage;
+    }
+
+    public function setArticleImage(ArticleImage $articleImage): self
+    {
+        // set the owning side of the relation if necessary
+        if ($articleImage->getArticle() !== $this) {
+            $articleImage->setArticle($this);
+        }
+
+        $this->articleImage = $articleImage;
+
+        return $this;
+    }
+
+    public function getArticleCategory(): ?ArticleCategory
+    {
+        return $this->articleCategory;
+    }
+
+    public function setArticleCategory(ArticleCategory $articleCategory): self
+    {
+        // set the owning side of the relation if necessary
+        if ($articleCategory->getArticle() !== $this) {
+            $articleCategory->setArticle($this);
+        }
+
+        $this->articleCategory = $articleCategory;
 
         return $this;
     }
