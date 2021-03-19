@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-
-        {% block javascripts %}{% endblock %}
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Blog DIY">
+        <meta name="author" content="Lorraine">
+        <title>{% block title %}Blog DIY Lorraine{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        {% block stylesheets %}<link rel="stylesheet" href="/css/style.css"{% endblock %}
     </head>
     <body>
         {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
     </body>
 </html>

@@ -1,0 +1,20 @@
+#navbar {
+    margin-top: 2%;
+    background-color: rgb(245, 100, 21);
+    height: 65px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(255, 255, 255);
+    transition: transform .8s;
+    font-size: 1.2em;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    transform: scale(1.2);
+    color: rgb(255, 255, 255);
+}
+
+.last-item {
+
+}
