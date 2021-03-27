@@ -8,36 +8,35 @@
         <title>{% block title %}Blog DIY Lorraine{% endblock %}</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="icon" href="/img/logo-favicon.png"/>
         {% block stylesheets %}<link rel="stylesheet" href="/css/style.css"{% endblock %}
     </head>
     <body>
 
     <nav class="navbar navbar-expand-lg" id="navbar">
-        <div class="container-fluid">
-                <div class="col-1 offset-1">
-                    <a class="navbar-brand col-1 offset-1" href="">
-                        <img src="/img/logo-resized.png" alt="logo" id="logo">
-                    </a>
-                </div>
-                <div class="collapse navbar-collapse col-6 offset-2 justify-content-center">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item mr-4 ml-4">
-                            <a class="nav-link" href="">Cuisine</a>
-                        </li>
-                        <li class="nav-item mr-4 ml-4">
-                            <a class="nav-link" href="">Déco</a>
-                        </li>
-                        <li class="nav-item mr-4 ml-4">
-                            <a class="nav-link" href="">Couture</a>
-                        </li>
-                        <li class="nav-item mr-4 ml-4">
-                            <a class="nav-link" href="">Maison</a>
-                        </li>
-                        <li class="nav-item mr-4 ml-4">
-                            <a class="nav-link nav-login" href="">Connexion</a>
-                        </li>
-                    </ul>
-            </div>
+        <a class="navbar-brand col-1 offset-1" href="">
+            <img src="/img/logo.png" alt="logo" id="logo">
+        </a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto col-5 offset-2">
+                <li class="nav-item mr-4 ml-4">
+                    <a class="nav-link" href="">Cuisine</a>
+                </li>
+                <li class="nav-item mr-4 ml-4">
+                    <a class="nav-link" href="">Déco</a>
+                </li>
+                <li class="nav-item mr-4 ml-4">
+                    <a class="nav-link" href="">Couture</a>
+                </li>
+                <li class="nav-item mr-4 ml-4">
+                    <a class="nav-link" href="">Maison</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto col-1 offset-1">
+                <li class="nav-item d-flex justify-content-end">
+                    <a class="nav-link nav-login" href="">Connexion</a>
+                </li>
+            </ul>
         </div>
     </nav>
 
