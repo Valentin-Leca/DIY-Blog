@@ -9,7 +9,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="icon" href="/img/logo-favicon.png"/>
-        {% block stylesheets %}<link rel="stylesheet" href="/css/style.css"{% endblock %}
+        {% block stylesheets %}<link rel="stylesheet" href="/css/style.css">
+            <link rel="stylesheet" href="/css/splide.min.css">{% endblock %}
     </head>
     <body>
 
@@ -40,7 +41,23 @@
         </div>
     </nav>
 
+    <div class="splide">
+        <div class="splide__track">
+            <ul class="splide__list">
+                <li class="splide__slide"><img src="/img/chat-1.jpg" class="slide-img" alt="logo"></li>
+                <li class="splide__slide"><img src="/img/chat-2.jpg" class="slide-img" alt="logo"></li>
+                <li class="splide__slide"><img src="/img/chat-3.jpg" class="slide-img" alt="logo"></li>
+                <li class="splide__slide"><img src="/img/chat-1.jpg" class="slide-img" alt="logo"></li>
+                <li class="splide__slide"><img src="/img/chat-2.jpg" class="slide-img" alt="logo"></li>
+                <li class="splide__slide"><img src="/img/chat-3.jpg" class="slide-img" alt="logo"></li>
+                <li class="splide__slide"><img src="/img/chat-1.jpg" class="slide-img" alt="logo"></li>
+                <li class="splide__slide"><img src="/img/chat-2.jpg" class="slide-img" alt="logo"></li>
+                <li class="splide__slide"><img src="/img/chat-3.jpg" class="slide-img" alt="logo"></li>
+            </ul>
+        </div>
+    </div>
+
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}<script src="/js/splide.min.js"></script>{% endblock %}
     </body>
 </html>
